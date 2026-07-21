@@ -151,10 +151,10 @@
         }
 
         .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            justify-items: center;
+            display: flex; /* Cambiamos de grid a flex */
+            flex-wrap: wrap; /* Permite que las tarjetas bajen a la siguiente fila */
+            justify-content: center; /* Centra los elementos sobrantes de la última fila */
+            gap: 20px; /* O el margen/separación que tengas actualmente entre tarjetas */
         }
 
         .screenshot-card {
@@ -162,7 +162,9 @@
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 15px;
+            flex: 0 1 calc(25% - 20px); /* Intenta ocupar un 25% (4 por fila) menos el gap */
             text-align: center;
+            min-width: 220px;
             max-width: 280px;
             transition: transform 0.3s ease;
         }
