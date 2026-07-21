@@ -81,12 +81,14 @@
         <h2>Atención & Soporte</h2>
         <p>¿Tienes dudas con tus créditos, problemas de acceso o consultas de autor? Envíanos un mensaje y te responderemos a la brevedad.</p>
         
-        <form action="mailto:soporte@novelero.com" method="post" enctype="text/plain" class="support-form">
+        <form action="https://api.web3forms.com/submit" method="post" class="support-form">
             <div class="form-group">
                 <label for="name">Nombre / Usuario</label>
                 <input type="text" id="name" name="Nombre" placeholder="Tu nombre o usuario de la app" required>
             </div>
-            
+
+            <input type="hidden" name="access_key" value="11a1acba-615a-464a-8403-945f5b6ec35a" />
+
             <div class="form-group">
                 <label for="email">Correo Electrónico</label>
                 <input type="email" id="email" name="Correo" placeholder="tu@email.com" required>
