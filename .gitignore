@@ -1,0 +1,6 @@
+# Archivos del IDE WebStorm
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
