@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelero - Lectura Continua & Comunidad Literaria</title>
+    <link rel="stylesheet" href="styles.css">
+        
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-title">NOVELERO</div>
+            <img src="images/Logo.png" class="logo">
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Lectura Continua & Plataforma Literaria</h1>
+        <p>Descubre historias independientes, conecta con creadores de contenido y gestiona tu biblioteca personal desde un solo lugar.</p>
+        <a href="#download" id="download" class="btn-download">Descargar APK (Android)</a>
+        <p class="dev-notice">
+            <span class="notice-badge">BETA</span>
+            La aplicación se encuentra en constante desarrollo, por lo que podrían presentarse pequeños errores o inestabilidades de uso.
+        </p>
+    </section>
+    
+    
+    
+    <section class="features">
+        <div class="card">
+            <h3>Plataforma Abierta</h3>
+            <p>Publica tus obras para conseguir ganancias</p>
+        </div>
+        <div class="card">
+            <h3>Lectura Adaptativa</h3>
+            <p>Interfaz comoda para navegar y la lectura continua por horas</p>
+        </div>
+        <div class="card">
+            <h3>Comunidad & Apoyo</h3>
+            <p>Sistemas de acreditación para apoyar directamente a los creadores e integrantes de la comunidad.</p>
+        </div>
+    </section>
+    
+    <section class="app-showcase">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Conoce la Interfaz</h2>
+        <div class="screenshots-grid">
+            <div class="screenshot-card">
+                <img src="images/Perfil.jpeg" alt="Perfil de Usuario Novelero">
+                <p>Gestión de perfil y estadísticas de lectura</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="images/Creditos.jpeg" alt="Paquetes de Créditos Novelero">
+                <p>Sistema de créditos</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="images/Publicar.jpeg" alt="Publicar Obra Novelero">
+                <p>Herramientas para autores e historias independientes</p>
+            </div>
+             <div class="screenshot-card">
+                <img src="images/Biblioteca.jpeg" alt="Biblioteca">
+                <p>Tu propia biblioteca para gestionar lo que lees</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="images/Chat.jpeg" alt="Chat">
+                <p>Comenta con otras personas que te parecio la obra</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="images/Explorar.jpeg" alt="Explorar">
+                <p>Explora mas obras de la comunidad</p>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    <!-- SECCIÓN DE SOPORTE Y CONTACTO -->
+<section class="support-section" id="soporte">
+    <div class="support-card">
+        <h2>Atención & Soporte</h2>
+        <p>¿Tienes dudas con tus créditos, problemas de acceso o consultas de autor? Envíanos un mensaje y te responderemos a la brevedad.</p>
+        
+        <form action="mailto:soporte@novelero.com" method="post" enctype="text/plain" class="support-form">
+            <div class="form-group">
+                <label for="name">Nombre / Usuario</label>
+                <input type="text" id="name" name="Nombre" placeholder="Tu nombre o usuario de la app" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="Correo" placeholder="tu@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Asunto</label>
+                <select id="subject" name="Asunto" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Reclamo de derechos">Reclamo por derechos de propiedad</option>
+                    <option value="Consulta de Pagos">Problemas con Créditos / Compras</option>
+                    <option value="Otro">Otro asunto</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="Mensaje" rows="5" placeholder="Describe brevemente en qué podemos ayudarte..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Correo</button>
+        </form>
+    </div>
+</section>
+    
+
+
+    <footer>
+        <div class="footer-links">
+            <a href="javascript:void(0)" onclick="openDmcaModal()">Aviso DMCA</a>
+            <a href="javascript:void(0)" onclick="openPrivacyModal()">Política de Privacidad</a>
+            <a href="javascript:void(0)" onclick="openTermsModal()">Términos del Servicio</a>
+        </div>
+        <p>&copy; 2026 Novelero App. Todos los derechos reservados.</p>
+
+        <div class="dmca-box" id="dmca">
+            <strong style="color: var(--text-main);">Política de Propiedad Intelectual & DMCA</strong>
+            <p style="margin-top: 5px;">Novelero opera como una plataforma de publicación para autores e independientes. Respetamos los derechos de propiedad intelectual de terceros. Si considera que algún contenido publicado por usuarios infringe sus derechos de autor, envíe una notificación formal con el desglose de la obra a nuestro correo de soporte para su retiro inmediato en cumplimiento de las normativas vigentes.</p>
+        </div>
+    </footer>
+    
+    <!-- VENTANA MODAL DMCA -->
+<div id="dmcaModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Política de Propiedad Intelectual & DMCA</h2>
+            <button class="modal-close" onclick="closeDmcaModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Novelero opera como una plataforma de publicación e interacción para autores e independientes. Respetamos los derechos de propiedad intelectual de terceros.</p>
+            <p>Si usted es propietario de derechos de autor o un agente autorizado y considera que cualquier contenido publicado dentro de la plataforma infringe sus derechos, puede enviar una notificación formal notificando el desglose de la obra mediante Atención y Soporte:</p>
+
+
+            <p class="modal-note">Al recibir una notificación válida conforme a la ley DMCA, procederemos con el retiro o inhabilitación inmediata del acceso al material señalado.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-modal-close" onclick="closeDmcaModal()">Entendido</button>
+        </div>
+    </div>
+</div>
+
+    <!-- VENTANA MODAL POLITICA DE PRIVACIDAD -->
+    <div id="privacyModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Política de Privacidad</h2>
+                <button class="modal-close" onclick="closePrivacyModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>En <strong>Novelero</strong> valoramos la privacidad de nuestros usuarios y nos comprometemos a proteger la información personal que compartes con nosotros.</p>
+
+                <h3 style="color: var(--accent-blue, #a2c5ff); font-size: 1rem; margin-top: 10px;">1. Información que Recopilamos</h3>
+                <p>Recopilamos únicamente la información necesaria para el funcionamiento de la app, como tu dirección de correo electrónico, nombre de usuario e historial de uso interno (créditos y lecturas).</p>
+
+                <h3 style="color: var(--accent-blue, #a2c5ff); font-size: 1rem; margin-top: 10px;">2. Uso de la Información</h3>
+                <p>Tus datos se utilizan exclusivamente para brindarte acceso a la plataforma, gestionar tus suscripciones o créditos y permitirte interactuar con la comunidad.</p>
+
+                <h3 style="color: var(--accent-blue, #a2c5ff); font-size: 1rem; margin-top: 10px;">3. Seguridad & Terceros</h3>
+                <p>No vendemos ni compartimos tu información personal con terceros. Las transacciones financieras y de activos digitales son procesadas mediante pasarelas externas, seguras y reconocidas sin almacenar datos sensibles en nuestros servidores.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-close" onclick="closePrivacyModal()">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VENTANA MODAL TERMINOS DEL SERVICIO -->
+    <div id="termsModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Términos del Servicio</h2>
+                <button class="modal-close" onclick="closeTermsModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Al acceder y utilizar la aplicación <strong>Novelero</strong>, aceptas cumplir con los presentes Términos y Condiciones de Uso.</p>
+
+                <h3 style="color: var(--accent-blue, #a2c5ff); font-size: 1rem; margin-top: 10px;">1. Uso de la Plataforma</h3>
+                <p>Novelero es un espacio diseñado para la lectura, publicación y apoyo a proyectos literarios. Queda estrictamente prohibido el uso de la plataforma para actividades ilícitas, publicación de contenido inapropiado o conductas de acoso hacia otros miembros.</p>
+
+                <h3 style="color: var(--accent-blue, #a2c5ff); font-size: 1rem; margin-top: 10px;">2. Sistema de Créditos & Pagos</h3>
+                <p>Los créditos o recargas adquiridos dentro de la aplicación son virtuales y sirven exclusivamente para desbloquear funciones o apoyar creadores en el entorno de Novelero. Las compras son finales conforme a las políticas de las pasarelas de pago habilitadas en la aplicación.</p>
+
+                <h3 style="color: var(--accent-blue, #a2c5ff); font-size: 1rem; margin-top: 10px;">3. Cuentas de Usuario</h3>
+                <p>El usuario es responsable de mantener la confidencialidad de sus credenciales de acceso. Nos reservamos el derecho de suspender o cancelar cuentas que infrinjan repetidamente las normas comunitarias o la política de DMCA.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-close" onclick="closeTermsModal()">Entendido</button>
+            </div>
+        </div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+</html>

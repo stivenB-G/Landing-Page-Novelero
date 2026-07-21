@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="phoenix-pro.css">
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div class="progress-container phcode-no-lp-edit ">
+        <div class="progress-indicator">
+            <div class="progress-dot" data-section="2">
+                <span class="dot-number">1</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-dot" data-section="3">
+                <span class="dot-number">2</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-dot" data-section="4">
+                <span class="dot-number">3</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-dot" data-section="5">
+                <span class="dot-number">4</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-dot" data-section="6">
+                <span class="dot-number">5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="game-container phcode-no-lp-edit-this">
+        <!-- Section 1: What is Live Preview Editing -->
+        <div class="paper-card section active phcode-no-lp-edit" id="section-1" data-section="1" style="display: none;">
+            <div class="section-header ">
+                <h2 class="section-title">Editar en Vista Previa en Vivo</h2>
+                <p class="section-subtitle">Edita tu página visualmente -&nbsp; <b>Tu HTML se actualiza al instante</b></p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="images/editText.png" alt="Edit Text">
+                </div>
+                <div class="feature-item">
+                    <img src="images/imageLib.svg" alt="Image Library">
+                </div>
+                <div class="feature-item">
+                    <img src="images/drahNDrop.png" alt="Drag and Drop">
+                </div>
+                <div class="feature-item">
+                    <img src="images/layoutRulers.png" alt="Layout Rulers">
+                </div>
+            </div>
+
+            <div class="get-started-container phcode-no-lp-edit phcode-dismiss-lp-edit">
+                <button class="get-started-button" id="get-started-button">
+                    <span>Empezar</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 2: Live Preview Edit -->
+        <div class="paper-card section phcode-no-lp-edit-this" id="section-2" data-section="2">
+            <div class="section-header phcode-no-lp-edit">
+                <h2 class="section-title">Editar Texto</h2>
+                <p class="section-subtitle">Haz doble clic para editar el texto de abajo y agregar tu nombre</p>
+            </div>
+
+            <div class="playground phcode-no-lp-edit-this">
+                <div class="editable-container">
+                    <span id="editable-name" class="editable-text">Hola ___</span>
+                </div>
+            </div>
+
+            <div class="success-message phcode-no-lp-edit" id="success-message">
+                <span class="success-icon">←</span>
+                <p id="success-message-text">Tu edición actualizó el código — deshaz con <span id="undo-shortcut"></span>, rehaz con <span id="redo-shortcut"></span>.</p>
+            </div>
+
+            <div class="slide-controls phcode-no-lp-edit"></div>
+
+            <div class="hint-content-inline phcode-no-lp-edit" data-section="2">
+                <p style="margin-bottom: 12px; font-weight: 600; color: var(--text-primary);">Para completar esta tarea:</p>
+                <ol>
+                    <li>Haz doble clic en el texto &quot;Hola ___&quot;</li>
+                    <li>Reemplaza los guiones bajos con tu nombre</li>
+                    <li>Pulsa Intro o haz clic fuera para aplicar los cambios</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Section 3: Change Images Live -->
+        <div class="paper-card section phcode-no-lp-edit-this" id="section-3" data-section="3">
+            <div class="section-header phcode-no-lp-edit">
+                <h2 class="section-title">Cambia imágenes en tiempo real</h2>
+                <p class="section-subtitle">Haz clic en la imagen de abajo para reemplazarla por una que te guste de la biblioteca de imágenes.</p>
+            </div>
+
+            <div class="playground phcode-no-lp-edit-this">
+                <div class="image-container phcode-no-lp-edit-this">
+                    <img id="replaceable-image" src="images/placeholder.svg" alt="Replaceable image" class="replaceable-image">
+                </div>
+            </div>
+
+            <div class="success-message phcode-no-lp-edit" id="success-message-section3">
+                <p id="success-message-text-section3-url" style="display: none;">¿Sabías que puedes descargar imágenes con el botón de descarga <img src="images/download.svg" alt="Download" class="inline-icon"> en la biblioteca de imágenes?</p>
+                <p id="success-message-text-section3-local" style="display: none;">¿Sabías que puedes hacer clic en una imagen para usarla sin descargarla?</p>
+            </div>
+
+            <div class="slide-controls phcode-no-lp-edit"></div>
+
+            <div class="hint-content-inline phcode-no-lp-edit" data-section="3">
+                <p style="margin-bottom: 12px; font-weight: 600; color: var(--text-primary);">Para completar esta tarea:</p>
+                <ul>
+                    <li>Haz clic en la imagen para abrir la Biblioteca de imágenes (alterna con el icono <img src="images/image.svg" alt="Image" class="inline-icon"> de la barra de herramientas o haz doble clic).</li>
+                    <li>En la biblioteca de imágenes: pasa el cursor sobre las miniaturas para previsualizarlas</li>
+                    <li>Haz clic en una miniatura para colocarla en tu página, o haz clic en el icono <img src="images/download.svg" alt="Download" class="inline-icon"> para descargarla primero</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 4: Edit Elements Visually -->
+        <div class="paper-card section phcode-no-lp-edit-this" id="section-4" data-section="4">
+            <div class="section-header phcode-no-lp-edit">
+                <h2 class="section-title">Edita elementos visualmente</h2>
+                <p class="section-subtitle">Duplica<img src="images/duplicate.svg" alt="Duplicate" class="inline-icon"> la tarjeta de abajo para tener un total de <strong>3 tarjetas</strong>, luego <strong>elimina<img src="images/trash.svg" alt="Delete" class="inline-icon"> 1 tarjeta</strong>.</p>
+            </div>
+
+            <div class="progress-toast phcode-no-lp-edit" id="progress-toast-section4">
+                <p id="progress-toast-text-section4">
+                    <span id="card-count-status">1/3 cards</span>,
+                    <span id="delete-count-status">0/1 deleted</span>
+                </p>
+            </div>
+
+            <div class="undo-message phcode-no-lp-edit" id="undo-message-section4">
+                <span class="warning-icon">⚠️</span>
+                <p>¡Uy! Se han eliminado todas las tarjetas. Pulsa <strong><span id="undo-shortcut-section4"></span></strong> para deshacer.</p>
+            </div>
+
+            <div class="playground phcode-no-lp-edit-this">
+                <div class="cards-container phcode-no-lp-edit-this">
+                    <div class="demo-card">
+                        <img src="images/placeholder.svg" alt="Imagen de la tarjeta" class="card-image">
+                        <h3 class="card-title">Tarjeta</h3>
+                        <p class="card-text">Haz clic en el icono <img src="images/arrowUp.svg" alt="Up" class="inline-icon">&nbsp;de la barra de herramientas superior para seleccionar la tarjeta principal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-message phcode-no-lp-edit" id="success-message-section4">
+                <span class="success-icon">✓</span>
+                <p id="success-message-text-section4">¡Perfecto! Has dominado la duplicación y eliminación de elementos.</p>
+            </div>
+
+            <div class="slide-controls phcode-no-lp-edit"></div>
+
+            <div class="hint-content-inline phcode-no-lp-edit" data-section="4">
+                <p style="margin-bottom: 12px; font-weight: 600; color: var(--text-primary);">Para completar esta tarea:</p>
+                <ol style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Haz clic en la tarjeta para seleccionarla</li>
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Usa el botón <img src="images/duplicate.svg" alt="Duplicate" class="inline-icon"> o pulsa <strong><span id="duplicate-shortcut"></span></strong> para duplicar tarjetas hasta que tengas 3 en total</li>
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Selecciona cualquier tarjeta y usa el botón <img src="images/trash.svg" alt="Delete" class="inline-icon"> o pulsa <strong>Eliminar</strong> para eliminarla</li>
+                    <li style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Consejo: Puedes deshacer con <strong><span id="undo-shortcut-hint"></span></strong> y rehacer con <strong><span id="redo-shortcut-hint"></span></strong></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Section 5: Reorder Elements -->
+        <div class="paper-card section phcode-no-lp-edit-this" id="section-5" data-section="5">
+            <div class="section-header phcode-no-lp-edit">
+                <h2 class="section-title">Reordenar elementos arrastrando</h2>
+                <p class="section-subtitle">Arrastra cualquier nota para cambiar el orden.</p>
+            </div>
+
+            <div class="playground phcode-no-lp-edit-this">
+                <div class="notes-container phcode-no-lp-edit-this">
+                    <div class="sticky-note">Segundo lugar</div>
+                    <div class="sticky-note">Primer lugar</div>
+                    <div class="sticky-note">Tercer lugar</div>
+                </div>
+            </div>
+
+            <div class="success-message phcode-no-lp-edit" id="success-message-section5">
+                <span class="success-icon">✓</span>
+                <p id="success-message-text-section5">Puedes arrastrar elementos a cualquier parte de la página para reorganizarlos.</p>
+            </div>
+
+            <div class="slide-controls phcode-no-lp-edit"></div>
+
+            <div class="hint-content-inline phcode-no-lp-edit" data-section="5">
+                <p style="margin-bottom: 12px; font-weight: 600; color: var(--text-primary);">Para completar esta tarea:</p>
+                <ol style="margin: 0 0 0 20px; padding: 0;">
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Haz clic y mantén pulsada cualquier nota para empezar a arrastrar.</li>
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Muévela hacia arriba o hacia abajo para cambiar el orden.</li>
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Suelta para colocarla en la nueva posición.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Section 6: Edit Links & Preview Mode (Final Slide) -->
+        <div class="paper-card section phcode-no-lp-edit-this" id="section-6" data-section="6">
+            <div class="section-header phcode-no-lp-edit">
+                <h2 class="section-title">Edita los enlaces y previsualiza tu página.</h2>
+                <p class="section-subtitle">Selecciona el icono <img src="images/link.svg" alt="Link" class="inline-icon"> en la barra de herramientas para cambiar a dónde apunta este enlace.</p>
+            </div>
+
+            <div class="playground phcode-no-lp-edit-this">
+                <div class="link-demo-container phcode-no-lp-edit-this">
+                    <p class="link-demo-text"><a id="editable-link" href="https://docs.phcode.dev/app-links/live-preview-edit" class="demo-link" target="_blank">Editar enlace</a></p>
+                </div>
+            </div>
+
+            <div class="success-message phcode-no-lp-edit" id="success-message-section6">
+                <span class="success-icon">✓</span>
+                <p id="success-message-text-section6">Has editado un enlace.</p>
+            </div>
+
+            <div class="mode-explanation phcode-no-lp-edit">
+                <h3 class="mode-title">Modo de edición vs. modo de vista previa</h3>
+                <div class="mode-cards" id="mode-cards-hover">
+                    <div class="mode-card edit-mode-card">
+                        <div class="mode-icon"><i class="fas fa-pencil"></i></div>
+                        <div class="mode-info">
+                            <strong>Modo de edición</strong>
+                            <p>Selecciona y cambia elementos en la página</p>
+                        </div>
+                    </div>
+                    <div class="mode-card preview-mode-card">
+                        <div class="mode-icon"><i class="fas fa-pencil"></i></div>
+                        <div class="mode-info">
+                            <strong>Modo de vista previa</strong>
+                            <p>Ve tu página como la verán los visitantes</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-hint">Presiona <strong>F8</strong> o haz clic en el botón <span class="play-button-hint"><i class="fa-solid fa-pencil"></i></span> para cambiar de modo.</p>
+            </div>
+
+            <div class="slide-controls phcode-no-lp-edit"></div>
+
+            <div class="hint-content-inline phcode-no-lp-edit" data-section="6">
+                <p style="margin-bottom: 12px; font-weight: 600; color: var(--text-primary);">Consejos:</p>
+                <ul style="margin: 0 0 0 20px; padding: 0; list-style-type: disc;">
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Haz clic en cualquier enlace para seleccionarlo y editarlo.</li>
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Activa <strong>Abrir en una pestaña nueva</strong> para abrir los enlaces en una página separada.</li>
+                    <li style="margin-bottom: 0; color: var(--text-primary);">Cambia al modo de vista previa (<strong>F8</strong>) para probar los enlaces y las interacciones</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 7: Completion Slide -->
+        <div class="paper-card section completion-slide phcode-no-lp-edit-this" id="section-7" data-section="7">
+            <div class="completion-content phcode-no-lp-edit">
+                <div class="completion-icon">
+                    <img src="images/rocket.svg" alt="Cohete" class="completion-icon-svg svg-orange">
+                </div>
+                <h2 class="completion-title">¡Ya estás listo para empezar a crear!</h2>
+                <p class="completion-body">Has aprendido a editar con la Vista previa en vivo.<br>Abre una carpeta con tus archivos HTML para empezar a editar.</p>
+
+                <p class="completion-helper">¿Necesitas más ayuda?</p>
+
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/@phoenixcodeeditor3764" target="_blank" class="resource-link">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://docs.phcode.dev/app-links/live-preview-edit" target="_blank" class="resource-link">
+                        <i class="fas fa-book"></i>
+                        <span>Documentación</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide-controls phcode-no-lp-edit"></div>
+        </div>
+
+        <!-- Section 8: Bonus - Check Layout with Measurements -->
+        <div class="paper-card section bonus-slide phcode-no-lp-edit-this" id="section-8" data-section="8">
+            <div class="section-header phcode-no-lp-edit">
+                <span class="bonus-badge">Una cosa más</span>
+                <h2 class="section-title">Comprueba el diseño con las medidas</h2>
+                <p class="section-subtitle">Haz clic en <img src="images/verticalEllipsis.svg" alt="menu" class="inline-icon"> en la barra de herramientas y selecciona <strong>Mostrar medidas</strong> para ver qué caja está desalineada.</p>
+            </div>
+
+            <div class="playground phcode-no-lp-edit-this">
+                <div class="alignment-demo phcode-no-lp-edit-this">
+                    <div class="align-box" id="align-box-1"><span class="phcode-no-lp-edit">Haz clic en <img src="images/verticalEllipsis.svg" alt="menu" class="inline-icon"></span></div>
+                    <div class="align-box misaligned"><span>Caja</span></div>
+                    <div class="align-box"><span>Caja</span></div>
+                </div>
+            </div>
+
+            <div class="slide-controls phcode-no-lp-edit"></div>
+
+            <div class="hint-content-inline phcode-no-lp-edit" data-section="8">
+                <p style="margin-bottom: 12px; font-weight: 600; color: var(--text-primary);">Consejos:</p>
+                <ul style="margin: 0 0 0 20px; padding: 0; list-style-type: disc;">
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Haz clic en el icono <img src="images/verticalEllipsis.svg" alt="More options" class="inline-icon"> en la barra de herramientas, o haz clic derecho para abrir el menú.</li>
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Activa <strong>Mostrar medidas</strong> para ver las guías de espaciado y alineación.</li>
+                    <li style="margin-bottom: 8px; color: var(--text-primary);">Las medidas te ayudan a detectar problemas de alineación rápidamente.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Confetti Container for Celebrations -->
+    <div class="confetti-container phcode-no-lp-edit" id="confetti-container"></div>
+
+    <!-- Edit/Preview toggle arrow (shown on section 6 hover). Points at the
+         pencil (edit-mode toggle) button in the live-preview toolbar. The
+         former center arrow was removed — it used to point at the preview
+         button when it was the dedicated play icon, but with the new
+         single-pencil toggle there is only one target worth pointing at. -->
+    <div class="arrow-pointer arrow-left" id="arrow-left">
+        <img src="images/arrowUp.svg" alt="Flecha" class="arrow-svg svg-gold">
+    </div>
+
+    <script src="phoenix-pro.js"></script>
+</body>
+</html>
