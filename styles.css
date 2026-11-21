@@ -150,11 +150,26 @@
             padding: 0 20px;
         }
 
-        .screenshots-grid {
-            display: flex; /* Cambiamos de grid a flex */
-            flex-wrap: wrap; /* Permite que las tarjetas bajen a la siguiente fila */
-            justify-content: center; /* Centra los elementos sobrantes de la última fila */
-            gap: 20px; /* O el margen/separación que tengas actualmente entre tarjetas */
+        /* --- Carrusel de capturas --- */
+
+        .carousel-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease;
+            will-change: transform;
         }
 
         .screenshot-card {
@@ -162,10 +177,8 @@
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 15px;
-            flex: 0 1 calc(25% - 20px); /* Intenta ocupar un 25% (4 por fila) menos el gap */
+            flex: 0 0 280px;
             text-align: center;
-            min-width: 220px;
-            max-width: 280px;
             transition: transform 0.3s ease;
         }
 
@@ -184,6 +197,44 @@
             margin-top: 15px;
             font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        /* Botones de navegación del carrusel */
+
+        .carousel-btn {
+            flex: 0 0 auto;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--accent-purple);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Ocultar botones en pantallas pequeñas */
+        @media (max-width: 600px) {
+            .carousel-btn {
+                display: none;
+            }
+
+            .screenshot-card {
+                flex: 0 0 240px;
+            }
         }
         
 /* --- Estilos para el Encabezado (Header) --- */
