@@ -50,115 +50,36 @@ window.onclick = function(event) {
     if (event.target === termsModal) closeTermsModal();
 };
 
-// --- CARRUSEL DE CAPTURAS DE PANTALLA ---
+// --- CARRUSEL INFINITO DE CAPTURAS DE PANTALLA ---
 
 document.addEventListener('DOMContentLoaded', function () {
     const track = document.querySelector('.carousel-track');
     const viewport = document.querySelector('.carousel-viewport');
-    const prevBtn = document.querySelector('.carousel-btn-prev');
-    const nextBtn = document.querySelector('.carousel-btn-next');
 
     if (!track || !viewport) return;
 
     const cards = track.querySelectorAll('.screenshot-card');
     if (cards.length === 0) return;
 
-    let currentIndex = 0;
-    let autoScrollInterval;
-    let isPaused = false;
-
-    function getCardWidth() {
-        const card = cards[0];
-        const style = window.getComputedStyle(card);
-        const cardWidth = card.offsetWidth;
-        const gap = parseInt(style.gap) || 20;
-        return cardWidth + gap;
-    }
-
-    function getMaxIndex() {
-        const viewportWidth = viewport.offsetWidth;
-        const totalWidth = track.scrollWidth;
-        const visibleCards = Math.floor(viewportWidth / getCardWidth());
-        return Math.max(0, cards.length - visibleCards);
-    }
-
-    function updateCarousel() {
-        const offset = currentIndex * getCardWidth();
-        track.style.transform = `translateX(-${offset}px)`;
-    }
-
-    function nextSlide() {
-        const maxIndex = getMaxIndex();
-        currentIndex++;
-        if (currentIndex > maxIndex) {
-            currentIndex = 0;
-        }
-        updateCarousel();
-    }
-
-    function prevSlide() {
-        const maxIndex = getMaxIndex();
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = maxIndex;
-        }
-        updateCarousel();
-    }
-
-    function startAutoScroll() {
-        stopAutoScroll();
-        autoScrollInterval = setInterval(() => {
-            if (!isPaused) {
-                nextSlide();
-            }
-        }, 3000);
-    }
-
-    function stopAutoScroll() {
-        if (autoScrollInterval) {
-            clearInterval(autoScrollInterval);
-            autoScrollInterval = null;
-        }
-    }
-
-    // Botones de navegación
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            startAutoScroll(); // reiniciar el timer
-        });
-    }
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            startAutoScroll(); // reiniciar el timer
-        });
-    }
+    // Clonar las tarjetas para crear el efecto infinito
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+    });
 
     // Pausar al pasar el mouse
     viewport.addEventListener('mouseenter', () => {
-        isPaused = true;
+        viewport.classList.add('is-paused');
     });
     viewport.addEventListener('mouseleave', () => {
-        isPaused = false;
+        viewport.classList.remove('is-paused');
     });
 
-    // Pausar al hacer touch en móviles
+    // Pausar al tocar en móviles
     viewport.addEventListener('touchstart', () => {
-        isPaused = true;
+        viewport.classList.add('is-paused');
     }, { passive: true });
     viewport.addEventListener('touchend', () => {
-        setTimeout(() => {
-            isPaused = false;
-        }, 2000);
+        viewport.classList.remove('is-paused');
     }, { passive: true });
-
-    // Reiniciar al redimensionar la ventana
-    window.addEventListener('resize', () => {
-        currentIndex = 0;
-        updateCarousel();
-    });
-
-    // Iniciar el auto-scroll
-    startAutoScroll();
 });
