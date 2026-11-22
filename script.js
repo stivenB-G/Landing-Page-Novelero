@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let position = 0;
     let isPaused = false;
     let animationId = null;
-    const speed = 0.5; // píxeles por frame (ajustar para más rápido/lento)
+    const speed = 1.0; // píxeles por frame (más rápido y fluido)
 
     function getHalfWidth() {
         // El ancho del primer set de tarjetas (mitad del track total)
@@ -93,7 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Iniciar la animación
     animationId = requestAnimationFrame(animate);
 
-    // Pausar al pasar el mouse
+    // --- Pausa del carrusel ---
+
+    // Desktop: pausar al pasar el mouse
     viewport.addEventListener('mouseenter', () => {
         isPaused = true;
     });
@@ -101,15 +103,22 @@ document.addEventListener('DOMContentLoaded', function () {
         isPaused = false;
     });
 
-    // Pausar al tocar en móviles
+    // Móvil: pausar mientras se mantiene presionado
     viewport.addEventListener('touchstart', () => {
         isPaused = true;
     }, { passive: true });
     viewport.addEventListener('touchend', () => {
         isPaused = false;
     }, { passive: true });
+    viewport.addEventListener('touchmove', () => {
+        isPaused = true;
+    }, { passive: true });
+    viewport.addEventListener('touchcancel', () => {
+        isPaused = false;
+    }, { passive: true });
 
-    // Abrir lightbox al hacer clic en una imagen del carrusel
+    // --- LIGHTBOX: abrir imágenes al tocar o hacer clic ---
+
     const lightbox = document.getElementById('lightboxModal');
     const lightboxImg = document.getElementById('lightboxImage');
 
@@ -123,7 +132,27 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => { lightboxImg.src = ''; }, 300);
     };
 
-    // Delegación de eventos: clic en imágenes dentro del track
+    // Detectar toques cortos (tap) en imágenes para abrir el lightbox
+    let touchStartTime = 0;
+    let touchStartTarget = null;
+
+    track.addEventListener('touchstart', function (e) {
+        const img = e.target.closest('.screenshot-card img');
+        if (img) {
+            touchStartTime = Date.now();
+            touchStartTarget = img;
+        }
+    }, { passive: true });
+
+    track.addEventListener('touchend', function (e) {
+        if (touchStartTarget && Date.now() - touchStartTime < 300) {
+            // Toque corto (tap) — abrir lightbox
+            openLightbox(touchStartTarget.src);
+        }
+        touchStartTarget = null;
+    }, { passive: true });
+
+    // Clic en desktop como respaldo
     track.addEventListener('click', function (e) {
         const img = e.target.closest('.screenshot-card img');
         if (img) {
@@ -131,10 +160,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Cerrar al hacer clic fuera de la imagen
+    // Cerrar lightbox al tocar o hacer clic fuera de la imagen
     lightbox.addEventListener('click', function (e) {
         if (e.target === lightbox) {
             closeLightbox();
         }
     });
+    lightbox.addEventListener('touchend', function (e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    }, { passive: true });
 });
